@@ -2,9 +2,8 @@ import os
 import time
 from scanner import scan_directory
 from reports import generate_report
+from utils import clean_terminal, format_size
 
-def clean_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
 
 def analyze_path():
     path = input("Informe o caminho: ")
@@ -32,7 +31,7 @@ def main():
                     print(f"Arquivos: {files_count}")
                     print(f"Tamanho total em bytes: {total_size}")
                     print(f"Maior arquivo: {largest_file}")
-                    print(f"Tamanho: {largest_size}\n")
+                    print(f"Tamanho: {format_size(largest_size)} \n")
                     op = input("Gera Relatorio? (s/n) ")
                     if op.lower() in ["s", "sim"]:
                         generate_report(directory_count, files_count, total_size, largest_file, largest_size )
@@ -51,7 +50,7 @@ def main():
 
             case "3":
                 print("Saindo do programa...")
-                time.sleep(0.4)
+                time.sleep(0.3)
                 clean_terminal()
                 break
             case _:
