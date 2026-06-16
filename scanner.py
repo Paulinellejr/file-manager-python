@@ -1,6 +1,5 @@
 import os
 
-
 def scan_directory(path):
     directory_count = 0
     files_count = 0
@@ -16,6 +15,12 @@ def scan_directory(path):
         raise NotADirectoryError("O caminho informado não é um diretório.")
 
     for root, dirs, files in os.walk(path):
+
+        dirs[:] = [d for d in dirs if not d.startswith(".")] # não entendi ainda 
+
+    # Opcional: para pular arquivos ocultos
+        files = [f for f in files if not f.startswith(".")]
+
         directory_count += len(dirs)
         files_count += len(files)
         for file in files:
