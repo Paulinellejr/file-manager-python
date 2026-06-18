@@ -1,5 +1,5 @@
 import os
-
+from utils import progress_bar
 
 
 def move_file(entry, folder_name, path):
@@ -39,15 +39,25 @@ def organize_directory(path):
                     ".mp3":  "Audio",
                     ".wav":  "Audio",
                     ".flac": "Audio",
+
+                    ".deb": "Packaged",
+                    ".rpm": "Packaged", 
                 }
     moved_files = 0
     with os.scandir(path) as entries:
-        for entry in entries:
+        files = [
+            entry
+            for entry in os.scandir(path)
+            if entry.is_file()
+        ]
+
+        total_files = len(files)
+
+        for index, entry in enumerate(files, start=1):
             if entry.is_file():
                 _, extension  = os.path.splitext(entry.name)
-                print(f"{entry.name} -> {extension}")
                 folder_name = categories.get(extension.lower(), "Others")
                 target_folder = os.path.join(path, folder_name)
                 moved_files += move_file(entry, target_folder, path)
-
+                progress_bar(index, total_files)
     return  moved_files

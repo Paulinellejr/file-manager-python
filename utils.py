@@ -16,3 +16,10 @@ def format_size(size):
 
 
     return f"{size:.2f} {units[unit_index]}"
+
+
+
+def progress_bar(index, total_files):
+    progress = index / total_files
+    bar = "█" * int(progress * 20)
+    print(f"\r[{bar:<20}] {progress:.0%}",end="")
