@@ -131,6 +131,7 @@ Tamanho: 1.2 GB
 ```
 
 ### Gerar relatório
+
 Entrada:
 
 ```bash
@@ -157,7 +158,23 @@ Tamanho:
 
 ```
 
+### Buscar arquivo
 
+Entrada:
+
+```bash
+Caminho: /home/user/Downloads
+Arquivo: report
+```
+Saida:
+```bash
+Downloads/
+├── report.pdf
+├── final_report.pdf
+├── report.txt
+└── Projetos/
+    └── report_2026.docx
+```
 
 ___
 
@@ -169,7 +186,7 @@ ___
 
 ### Organização de Arquivos
 
-![Organizador](images/organizer.png)
+![Demonstração](images/demo.gif)
 
 ___
 ### ⚡ Recursos Extras
