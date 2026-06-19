@@ -12,9 +12,12 @@
 | [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas) |
 | [📁 Estrutura do Projeto](#-estrutura-do-projeto) |
 | [▶️ Como Executar](#️-como-executar) |
+| [💡 Exemplo de Uso](#-exemplo-de-uso) |
+| [📸 Demonstração](#-demonstração) |
 | [🎯 Objetivos de Aprendizado](#-objetivos-de-aprendizado) |
 | [📚 Conceitos Utilizados](#-conceitos-utilizados) |
 | [🔮 Melhorias Futuras](#-melhorias-futuras) |
+| [📄 Licença](#-licença) |
 | [👨‍💻 Autor](#-autor) |
 
 ## 📖 Sobre o Projeto
@@ -157,8 +160,6 @@ Tamanho:
 
 ```
 
-
-
 ___
 
 ## 📸 Demonstração
@@ -167,11 +168,8 @@ ___
 
 ![Menu Principal](images/menu.png)
 
-### Organização de Arquivos
-
-![Organizador](images/organizer.png)
-
 ___
+
 ### ⚡ Recursos Extras
 
 * Barra de progresso durante a organização.
@@ -219,10 +217,12 @@ Durante o desenvolvimento foram utilizados:
 
 ---
 
-## 👨‍💻 Autor
-
-Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhecimentos em Python e manipulação do sistema de arquivos.
-
 ## 📄 Licença
 
 Este projeto foi desenvolvido para fins de estudo e aprendizado.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhecimentos em Python e manipulação do sistema de arquivos.
