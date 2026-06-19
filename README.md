@@ -12,9 +12,12 @@
 | [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas) |
 | [📁 Estrutura do Projeto](#-estrutura-do-projeto) |
 | [▶️ Como Executar](#️-como-executar) |
+| [💡 Exemplo de Uso](#-exemplo-de-uso) |
+| [📸 Demonstração](#-demonstração) |
 | [🎯 Objetivos de Aprendizado](#-objetivos-de-aprendizado) |
 | [📚 Conceitos Utilizados](#-conceitos-utilizados) |
 | [🔮 Melhorias Futuras](#-melhorias-futuras) |
+| [📄 Licença](#-licença) |
 | [👨‍💻 Autor](#-autor) |
 
 ## 📖 Sobre o Projeto
@@ -62,6 +65,14 @@ Categorias suportadas:
 * Python 3
 * Biblioteca os
 * Biblioteca datetime
+
+---
+
+### ⚡ Recursos Extras
+
+* Barra de progresso durante a organização.
+* Formatação amigável de tamanhos (KB, MB, GB).
+* Interface de linha de comando interativa.
 
 ---
 
@@ -158,24 +169,6 @@ Tamanho:
 
 ```
 
-### Buscar arquivo
-
-Entrada:
-
-```bash
-Caminho: /home/user/Downloads
-Arquivo: report
-```
-Saida:
-```bash
-Downloads/
-├── report.pdf
-├── final_report.pdf
-├── report.txt
-└── Projetos/
-    └── report_2026.docx
-```
-
 ___
 
 ## 📸 Demonstração
@@ -184,18 +177,7 @@ ___
 
 ![Menu Principal](images/menu.png)
 
-### Organização de Arquivos
-
-![Demonstração](images/demo.gif)
-
 ___
-### ⚡ Recursos Extras
-
-* Barra de progresso durante a organização.
-* Formatação amigável de tamanhos (KB, MB, GB).
-* Interface de linha de comando interativa.
-
----
 
 ## 🎯 Objetivos de Aprendizado
 
@@ -236,10 +218,12 @@ Durante o desenvolvimento foram utilizados:
 
 ---
 
-## 👨‍💻 Autor
-
-Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhecimentos em Python e manipulação do sistema de arquivos.
-
 ## 📄 Licença
 
 Este projeto foi desenvolvido para fins de estudo e aprendizado.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhecimentos em Python e manipulação do sistema de arquivos.
