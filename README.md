@@ -68,6 +68,14 @@ Categorias suportadas:
 
 ---
 
+### ⚡ Recursos Extras
+
+* Barra de progresso durante a organização.
+* Formatação amigável de tamanhos (KB, MB, GB).
+* Interface de linha de comando interativa.
+
+---
+
 ## 📁 Estrutura do Projeto
 
 ```text
@@ -169,14 +177,6 @@ ___
 ![Menu Principal](images/menu.png)
 
 ___
-
-### ⚡ Recursos Extras
-
-* Barra de progresso durante a organização.
-* Formatação amigável de tamanhos (KB, MB, GB).
-* Interface de linha de comando interativa.
-
----
 
 ## 🎯 Objetivos de Aprendizado
 
