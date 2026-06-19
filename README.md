@@ -58,6 +58,7 @@ python-file-manager/
 ├── organizer.py
 ├── reports.py
 ├── utils.py
+├── search.py
 │
 ├── reports/
 │   └── report_YYYY-MM-DD_HH-MM-SS.txt
@@ -120,7 +121,6 @@ Durante o desenvolvimento foram utilizados:
 
 ## 🔮 Melhorias Futuras
 
-* Busca de arquivos por nome.
 * Identificação de arquivos duplicados.
 * Backup automático antes da organização.
 * Exportação de relatórios em CSV.
