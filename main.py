@@ -20,9 +20,13 @@ def banner():
 ██╔══╝  ██║╚██╔╝██║   ██╔═══╝   ╚██╔╝
 ██║     ██║ ╚═╝ ██║██╗██║        ██║
 ╚═╝     ╚═╝     ╚═╝╚═╝╚═╝        ╚═╝""")
+    print("           Python File Manager v1.0")
+    print("=" * 50)
 
 
 
+def pause():
+    input("\nEnter para continuar....")
 
 def menu():
     banner()
@@ -35,71 +39,81 @@ def menu():
     input_option = input("Por favor, selecione uma opção: ")
     return input_option
 
+def analyze_directory_option():
+    directory_count, files_count, total_size, largest_file, largest_size = analyze_path()
+    print("\n===== RESULTADO DA ANÁLISE =====\n")
+
+    print(f"Diretórios: {directory_count}")
+    print(f"Arquivos: {files_count}")
+    print(f"Tamanho total: {format_size(total_size)}")
+    print(f"Maior arquivo: {largest_file}")
+    print(f"Tamanho do maior arquivo: {format_size(largest_size)}")
+
+    report = input("\nGerar relatório? (s/n): ")
+    if report.lower() in ["s", "sim"]:
+        generate_report(directory_count, files_count, total_size, largest_file, largest_size )
+
+
+def generate_report_option():
+    directory_count, files_count, total_size, largest_file, largest_size =  analyze_path()
+    generate_report(directory_count, files_count, total_size, largest_file, largest_size)
+
+
+
+def organize_directory_option():
+    path = input("Informe o caminho: ")
+    moved_files = organize_directory(path)
+    print(f"\n{moved_files} organizados com sucesso!")
+
+
+def search_file_option():
+    path = input("Informe o caminho: ")
+    filename = input("Informe o arquivo: ")
+    results, total_file = search_files(path, filename)
+    if results:
+        print(f"{total_file} Arquivos encontrados.")
+        for folder, files in results.items():
+            print(f"\n{os.path.basename(folder)}/")
+            for index, file in enumerate(files):
+                if index == len(files) - 1:
+                    print(f"└── {file}")
+                else:
+                    print(f"├── {file}")
+    else:
+        print("Nenhum arquivo encontrado.")
+
 
 def main():
     while True:
-        clean_terminal()
-        option = menu()
-        match option:
-            case "1":
-                try:
-                    directory_count, files_count, total_size, largest_file, largest_size = analyze_path()
-                    print('\n')
-                    print(f"Diretorios: {directory_count}")
-                    print(f"Arquivos: {files_count}")
-                    print(f"Tamanho total em bytes: {total_size}")
-                    print(f"Maior arquivo: {largest_file}")
-                    print(f"Tamanho: {format_size(largest_size)} \n")
-                    op = input("Gera Relatorio? (s/n) ")
-                    if op.lower() in ["s", "sim"]:
-                        generate_report(directory_count, files_count, total_size, largest_file, largest_size )
+        try:
+            clean_terminal()
+            option = menu()
+            match option:
+                case "1":
+                    analyze_directory_option()
+                case "2":
+                    generate_report_option()
+                    pause()
+                case "3":
+                    organize_directory_option()
+                    pause()
+                case "5":
+                    search_file_option()
+                    pause()
+                case "6":
+                    print("Saindo do programa...")
+                    time.sleep(0.3)
+                    clean_terminal()
+                    break
+                case _:
+                    print("Opção Invalida. Por favor Selecione uma opção valida.")
+        except (FileNotFoundError, NotADirectoryError) as e:
+            print(f"\nErro: {e}")
+            pause()
 
-                    input("Enter para continuar....")
-
-                except (FileNotFoundError, NotADirectoryError) as e:
-                    print(f"Erro: {e}")
-
-            case "2":
-                try:
-                    directory_count, files_count, total_size, largest_file, largest_size =  analyze_path()
-                    generate_report(directory_count, files_count, total_size, largest_file, largest_size)
-                except (FileNotFoundError, NotADirectoryError) as e:
-                    print(f"Erro: {e}")
-            case "3":
-                try:
-                    path = input("Informe o caminho: ")
-                    moved_files = organize_directory(path)
-                    print(f"\n{moved_files} organizados com sucesso!\n")
-                    input("Enter para continuar....")
-                except (FileNotFoundError, NotADirectoryError) as e:
-                    print(f"Erro: {e}")
-            case "5":
-                try:
-                    path = input("Informe o caminho: ")
-                    filename = input("Informe o arquivo: ")
-                    results, total_file = search_files(path, filename)
-                    if results:
-                        print(f"{total_file} Arquivos encontrados.")
-                        for folder, files in results.items():
-                            print(f"\n{os.path.basename(folder)}/")
-                            for index, file in enumerate(files):
-                                if index == len(files) - 1:
-                                    print(f"└── {file}")
-                                else:
-                                    print(f"├── {file}")
-                    else:
-                        print("Nenhum arquivo encontrado.")
-
-                    input("Enter para continuar....")
-                except (FileNotFoundError, NotADirectoryError) as e:
-                     print(f"Erro: {e}")
-            case "6":
-                print("Saindo do programa...")
-                time.sleep(0.3)
-                clean_terminal()
-                break
-            case _:
-                print("Opção Invalida. Por favor Selecione uma opção valida.")
+        except Exception as e:
+            print(f"\nErro inesperado: {e}")
+            pause()
 
 if __name__ == "__main__":
     main()
