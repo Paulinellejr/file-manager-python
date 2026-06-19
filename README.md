@@ -93,7 +93,7 @@ python-file-manager/
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/python-file-manager.git
+git clone https://github.com/Paulinellejr/file-manager-python.git
 ```
 
 Entre na pasta do projeto:
@@ -242,4 +242,5 @@ Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhec
 
 ## 📄 Licença
 
-Este projeto foi desenvolvido para fins de estudo e aprendizado.
+Este projeto está licenciado sob a licença MIT.
+Consulte o arquivo LICENSE para mais detalhes.
