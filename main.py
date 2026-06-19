@@ -52,26 +52,26 @@ def analyze_directory_option():
     report = input("\nGerar relatório? (s/n): ")
     if report.lower() in ["s", "sim"]:
         generate_report(directory_count, files_count, total_size, largest_file, largest_size )
-
+    pause()
 
 def generate_report_option():
     directory_count, files_count, total_size, largest_file, largest_size =  analyze_path()
     generate_report(directory_count, files_count, total_size, largest_file, largest_size)
-
+    pause()
 
 
 def organize_directory_option():
     path = input("Informe o caminho: ")
     moved_files = organize_directory(path)
-    print(f"\n{moved_files} organizados com sucesso!")
-
+    print(f"\n{moved_files} organizado(s) com sucesso!")
+    pause()
 
 def search_file_option():
     path = input("Informe o caminho: ")
     filename = input("Informe o arquivo: ")
     results, total_file = search_files(path, filename)
     if results:
-        print(f"{total_file} Arquivos encontrados.")
+        print(f"{total_file} Arquivo(s) encontrado(s).")
         for folder, files in results.items():
             print(f"\n{os.path.basename(folder)}/")
             for index, file in enumerate(files):
@@ -81,6 +81,8 @@ def search_file_option():
                     print(f"├── {file}")
     else:
         print("Nenhum arquivo encontrado.")
+    pause()
+
 
 
 def main():
@@ -93,13 +95,10 @@ def main():
                     analyze_directory_option()
                 case "2":
                     generate_report_option()
-                    pause()
                 case "3":
                     organize_directory_option()
-                    pause()
                 case "5":
                     search_file_option()
-                    pause()
                 case "6":
                     print("Saindo do programa...")
                     time.sleep(0.3)

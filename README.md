@@ -1,5 +1,22 @@
 # Python File Manager
 
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Version](https://img.shields.io/badge/version-1.0-green)
+
+## 📑 Índice
+
+| Seção |
+|--------|
+| [📖 Sobre o Projeto](#-sobre-o-projeto) |
+| [🚀 Funcionalidades](#-funcionalidades) |
+| [🛠️ Tecnologias Utilizadas](#️-tecnologias-utilizadas) |
+| [📁 Estrutura do Projeto](#-estrutura-do-projeto) |
+| [▶️ Como Executar](#️-como-executar) |
+| [🎯 Objetivos de Aprendizado](#-objetivos-de-aprendizado) |
+| [📚 Conceitos Utilizados](#-conceitos-utilizados) |
+| [🔮 Melhorias Futuras](#-melhorias-futuras) |
+| [👨‍💻 Autor](#-autor) |
+
 ## 📖 Sobre o Projeto
 
 O Python File Manager é uma aplicação de linha de comando desenvolvida para praticar manipulação de arquivos e diretórios utilizando a biblioteca `os` do Python.
@@ -57,13 +74,16 @@ python-file-manager/
 ├── scanner.py
 ├── organizer.py
 ├── reports.py
-├── utils.py
 ├── search.py
+├── utils.py
 │
 ├── reports/
-│   └── report_YYYY-MM-DD_HH-MM-SS.txt
+├── images/
+│   ├── menu.png
+│   └── organizer.png
 │
-└── README.md
+├── README.md
+└── .gitignore
 ```
 
 ---
@@ -73,7 +93,7 @@ python-file-manager/
 Clone o repositório:
 
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/seu-usuario/python-file-manager.git
 ```
 
 Entre na pasta do projeto:
@@ -87,6 +107,76 @@ Execute o programa:
 ```bash
 python main.py
 ```
+
+---
+
+## 💡 Exemplo de Uso
+
+### Análise de Diretório
+
+Entrada:
+
+```bash
+Caminho: /home/user/Downloads
+```
+Saida:
+
+```
+Diretórios: 5
+Arquivos: 120
+Tamanho Total: 2.35 GB
+Maior Arquivo: curso-python.mp4
+Tamanho: 1.2 GB
+
+```
+
+### Gerar relatório
+Entrada:
+
+```bash
+Caminho: /home/user/Downloads
+```
+Saida:
+
+```bash
+Relatório salvo em: reports/report_YYYY-MM-DD_HH-MM-SS.txt
+```
+Exemplo de Relatório
+
+```text
+===== RELATÓRIO =====
+
+Diretórios: 14558
+Arquivos: 114871
+Tamanho Total: 2.51 GB
+
+Maior Arquivo:
+next-swc.linux-x64-gnu.node
+Tamanho:
+125.32 MB
+
+```
+
+
+
+___
+
+## 📸 Demonstração
+
+### Menu Principal
+
+![Menu Principal](images/menu.png)
+
+### Organização de Arquivos
+
+![Organizador](images/organizer.png)
+
+___
+### ⚡ Recursos Extras
+
+* Barra de progresso durante a organização.
+* Formatação amigável de tamanhos (KB, MB, GB).
+* Interface de linha de comando interativa.
 
 ---
 
@@ -132,3 +222,7 @@ Durante o desenvolvimento foram utilizados:
 ## 👨‍💻 Autor
 
 Desenvolvido por Paulinelle Junior como projeto de estudo para aprofundar conhecimentos em Python e manipulação do sistema de arquivos.
+
+## 📄 Licença
+
+Este projeto foi desenvolvido para fins de estudo e aprendizado.

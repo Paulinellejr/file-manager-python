@@ -6,7 +6,7 @@ from utils import format_size
 def generate_report(directory_count, files_count, total_size, largest_file, largest_size ):
     os.makedirs("reports", exist_ok=True)
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    path = f"reports/relatorio_{timestamp}.txt"
+    path = f"reports/report_{timestamp}.txt"
     with open(path, "w") as report:
         report.write("===== RELATÓRIO =====\n\n")
 
