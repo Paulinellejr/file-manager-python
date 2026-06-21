@@ -102,12 +102,17 @@ Entre na pasta do projeto:
 cd python-file-manager
 ```
 
+Instale as dependências:
+
+```bash
+pip install -r requirements.txt
+```
+
 Execute o programa:
 
 ```bash
 python main.py
 ```
-
 ---
 
 ## 💡 Exemplo de Uso
