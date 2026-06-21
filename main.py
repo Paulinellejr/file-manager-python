@@ -1,5 +1,6 @@
 import os
 import time
+from InquirerPy import inquirer
 from scanner import scan_directory
 from reports import generate_report
 from organizer import organize_directory
@@ -30,14 +31,16 @@ def pause():
 
 def menu():
     banner()
-    print("Bem-vindo ao menu!")
-    print("1 - Analisar pasta ")
-    print("2 - Gerar relatório")
-    print("3 - Organizador de diretorios")
-    print("5 - Buscar arquivo")
-    print("6 - Sair")
-    input_option = input("Por favor, selecione uma opção: ")
-    return input_option
+    option = inquirer.select(
+    message="O que deseja fazer?",
+    choices=[
+        "Analisar pasta",
+        "Gerar relatório",
+        "Organizar arquivos",
+        "Buscar arquivo",
+        "Sair"
+    ],).execute()
+    return option
 
 def analyze_directory_option():
     directory_count, files_count, total_size, largest_file, largest_size = analyze_path()
@@ -49,8 +52,8 @@ def analyze_directory_option():
     print(f"Maior arquivo: {largest_file}")
     print(f"Tamanho do maior arquivo: {format_size(largest_size)}")
 
-    report = input("\nGerar relatório? (s/n): ")
-    if report.lower() in ["s", "sim"]:
+    report = inquirer.confirm(message="Gerar relatório?", default=True).execute()
+    if report:
         generate_report(directory_count, files_count, total_size, largest_file, largest_size )
     pause()
 
@@ -91,15 +94,15 @@ def main():
             clean_terminal()
             option = menu()
             match option:
-                case "1":
+                case "Analisar pasta":
                     analyze_directory_option()
-                case "2":
+                case "Gerar relatório":
                     generate_report_option()
-                case "3":
+                case "Organizar arquivos":
                     organize_directory_option()
-                case "5":
+                case "Buscar arquivo":
                     search_file_option()
-                case "6":
+                case "Sair":
                     print("Saindo do programa...")
                     time.sleep(0.3)
                     clean_terminal()
@@ -113,6 +116,7 @@ def main():
         except Exception as e:
             print(f"\nErro inesperado: {e}")
             pause()
+            break
 
 if __name__ == "__main__":
     main()

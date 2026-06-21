@@ -231,7 +231,6 @@ Durante o desenvolvimento foram utilizados:
 * Identificação de arquivos duplicados.
 * Backup automático antes da organização.
 * Exportação de relatórios em CSV.
-* Interface gráfica.
 * Testes automatizados.
 
 ---
