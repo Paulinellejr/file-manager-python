@@ -1,11 +1,14 @@
 import os
 import time
 from InquirerPy import inquirer
+
 from scanner import scan_directory
 from reports import generate_report
 from organizer import organize_directory
 from utils import clean_terminal, format_size
 from search import search_files
+
+
 
 def analyze_path():
     path = input("Informe o caminho: ")
@@ -34,7 +37,7 @@ def menu():
     return inquirer.select(
     message="O que deseja fazer?",
     choices=[
-        "Analisar pasta",   
+        "Analisar pasta",
         "Gerar relatório",
         "Organizar arquivos",
         "Buscar arquivo",
