@@ -40,6 +40,8 @@ def move_file(entry, folder_name, path):
 
 
 def organize_directory(path):
+    organized_files = {}
+
     if not os.path.exists(path):
         raise FileNotFoundError("O caminho informado não existe.")
 
@@ -63,6 +65,7 @@ def organize_directory(path):
         _, extension = os.path.splitext(entry.name)
 
         folder_name = CATEGORIES.get(extension.lower(), "Others")
+        organized_files[folder_name] = (organized_files.get(folder_name, 0) + 1)
         target_folder = os.path.join(path, folder_name)
 
         move_file(entry, target_folder, path)
@@ -72,4 +75,4 @@ def organize_directory(path):
 
     print()
 
-    return moved_files
+    return moved_files, organized_files

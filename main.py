@@ -1,13 +1,11 @@
 import os
 import time
 from InquirerPy import inquirer
-
 from scanner import scan_directory
 from reports import generate_report
 from organizer import organize_directory
 from utils import clean_terminal, format_size
 from search import search_files
-
 
 
 def analyze_path():
@@ -67,8 +65,12 @@ def generate_report_option():
 
 def organize_directory_option():
     path = input("Informe o caminho: ")
-    moved_files = organize_directory(path)
-    print(f"\n{moved_files} organizado(s) com sucesso!")
+    moved_files, organized_files = organize_directory(path)
+    print("\n")
+    for folder, count in organized_files.items():
+       print(f"📁 {folder}:  {count} arquivo(s)")
+
+    print(f"\033[92m \n {moved_files} Arquivo(os) organizados!\033[0m")
     pause()
 
 def search_file_option():
