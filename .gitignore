@@ -32,6 +32,3 @@ reports/
 build/
 dist/
 *.egg-info/
-
-# Relatorios
-*.txt
