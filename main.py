@@ -16,13 +16,13 @@ def analyze_path():
 
 def banner():
     print(r"""
-███████╗███╗   ███╗   ██████╗ ██╗   ██╗
-██╔════╝████╗ ████║   ██╔══██╗╚██╗ ██╔╝
-█████╗  ██╔████╔██║   ██████╔╝ ╚████╔╝
-██╔══╝  ██║╚██╔╝██║   ██╔═══╝   ╚██╔╝
-██║     ██║ ╚═╝ ██║██╗██║        ██║
-╚═╝     ╚═╝     ╚═╝╚═╝╚═╝        ╚═╝""")
-    print("           Python File Manager v1.0")
+    ███████╗███╗   ███╗   ██████╗ ██╗   ██╗
+    ██╔════╝████╗ ████║   ██╔══██╗╚██╗ ██╔╝
+    █████╗  ██╔████╔██║   ██████╔╝ ╚████╔╝
+    ██╔══╝  ██║╚██╔╝██║   ██╔═══╝   ╚██╔╝
+    ██║     ██║ ╚═╝ ██║██╗██║        ██║
+    ╚═╝     ╚═╝     ╚═╝╚═╝╚═╝        ╚═╝""")
+    print("\033[93m         Python File Manager v1.0\033[0m")
     print("=" * 50)
 
 
@@ -66,11 +66,9 @@ def generate_report_option():
 def organize_directory_option():
     path = input("Informe o caminho: ")
     moved_files, organized_files = organize_directory(path)
-    print("\n")
+    print(f"\n\033[92m✅ {moved_files} Arquivo(os) organizados!\n\033[0m")
     for folder, count in organized_files.items():
        print(f"📁 {folder}:  {count} arquivo(s)")
-
-    print(f"\033[92m \n {moved_files} Arquivo(os) organizados!\033[0m")
     pause()
 
 def search_file_option():
