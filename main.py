@@ -8,6 +8,7 @@ from utils import clean_terminal, format_size
 from search import search_files
 
 
+
 def analyze_path():
     path = input("Informe o caminho: ")
     return scan_directory(path)
@@ -33,14 +34,14 @@ def pause():
 def menu():
     banner()
     return inquirer.select(
-    message="O que deseja fazer?",
+    message="   O que deseja fazer?",
     choices=[
         "Analisar pasta",
         "Gerar relatório",
         "Organizar arquivos",
         "Buscar arquivo",
         "Sair"
-    ], pointer=">>", instruction="Use ↑ ↓ e Enter").execute()
+    ], instruction="Use ↑ ↓ e Enter", border=True).execute()
 
 def analyze_directory_option():
     directory_count, files_count, total_size, largest_file, largest_size = analyze_path()

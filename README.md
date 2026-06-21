@@ -183,11 +183,11 @@ Downloads/
 
 ___
 
-## 📸 Demonstração
+## 🖥️ Demonstração
 
-### Menu Principal
-
-![Menu Principal](images/menu.png)
+| Menu Principal | Busca de Arquivos | Organização |
+|---|---|---|
+| ![Menu](images/menu.png) | ![Busca](images/search.png) | ![Organização](images/organizer.png) |
 
 ### Organização de Arquivos
 
