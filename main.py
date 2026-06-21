@@ -31,16 +31,15 @@ def pause():
 
 def menu():
     banner()
-    option = inquirer.select(
+    return inquirer.select(
     message="O que deseja fazer?",
     choices=[
-        "Analisar pasta",
+        "Analisar pasta",   
         "Gerar relatório",
         "Organizar arquivos",
         "Buscar arquivo",
         "Sair"
-    ],).execute()
-    return option
+    ], pointer=">>", instruction="Use ↑ ↓ e Enter").execute()
 
 def analyze_directory_option():
     directory_count, files_count, total_size, largest_file, largest_size = analyze_path()
