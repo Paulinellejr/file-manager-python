@@ -27,6 +27,13 @@ CATEGORIES = {
 
     ".deb": "Packaged",
     ".rpm": "Packaged",
+
+
+    ".rar": "Zipped",
+    ".7z": "Zipped",
+    ".tar": "Zipped",
+    ".zip": "Zipped",
+    ".gz":  "Zipped",
 }
 
 
